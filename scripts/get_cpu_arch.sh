@@ -44,7 +44,8 @@ elif [[ -f "/etc/redhat-release" ]]; then
     # Older Red Hat-based distributions
     CpuArch=$(get_cpu_arch "uname -m" "arch" "uname")
 else
-    exitWithError "Unsupported Linux distribution"
+    # Older Red Hat-based distributions
+    CpuArch=$(get_cpu_arch "uname -m" "arch" "uname")
 fi
 
 echo "CPU architecture: $CpuArch"
